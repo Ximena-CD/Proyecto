@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página de Pago</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+
+    .checkout-container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .metodo-detalles {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="checkout-container">
+    <h2>Información de Envío</h2>
+
+    <form id="form-pago">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" required>
+
+      <label for="direccion">Dirección</label>
+      <input type="text" id="direccion" required>
+
+      <label for="ciudad">Ciudad</label>
+      <input type="text" id="ciudad" required>
+
+      <label for="pais">País</label>
+      <input type="text" id="pais" required>
+
+      <label for="metodo">Método de pago</label>
+      <select id="metodo" required>
+        <option value="">Seleccione</option>
+        <option value="tarjeta">Tarjeta de crédito</option>
+        <option value="paypal">PayPal</option>
+        <option value="transferencia">Transferencia bancaria</option>
+      </select>
+
+      <!-- Detalles según método de pago -->
+      <div id="detalles-tarjeta" class="metodo-detalles">
+        <label for="numero">Número de tarjeta</label>
+        <input type="text" id="numero">
+
+        <label for="vencimiento">Fecha de vencimiento</label>
+        <input type="text" id="vencimiento" placeholder="MM/AA">
+
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv">
+      </div>
+
+      <div id="detalles-paypal" class="metodo-detalles">
+        <label for="paypal-email">Correo de PayPal</label>
+        <input type="email" id="paypal-email">
+      </div>
+
+      <div id="detalles-transferencia" class="metodo-detalles">
+        <p><strong>Banco:</strong> Banco Ejemplo</p>
+        <p><strong>Número de cuenta:</strong> 1234 5678 9012 3456</p>
+        <p><strong>Titular:</strong> Tienda Online S.A.</p>
+        <p><strong>CLABE:</strong> 002010123456789012</p>
+        <small>Por favor realiza la transferencia y guarda tu comprobante. Una vez realizado el pago, envía el comprobante al correo: pagos@tienda.com</small>
+      </div>
+      
+
+      <button type="submit">Finalizar Compra</button>
+    </form>
+  </div>
+
+  <script>
+    const metodoPago = document.getElementById("metodo");
+
+    metodoPago.addEventListener("change", function () {
+      // Ocultar todos
+      document.querySelectorAll(".metodo-detalles").forEach(div => {
+        div.style.display = "none";
+      });
+
+      // Mostrar según selección
+      const seleccion = metodoPago.value;
+      if (seleccion === "tarjeta") {
+        document.getElementById("detalles-tarjeta").style.display = "block";
+      } else if (seleccion === "paypal") {
+        document.getElementById("detalles-paypal").style.display = "block";
+      } else if (seleccion === "transferencia") {
+        document.getElementById("detalles-transferencia").style.display = "block";
+      }
+    });
+
+    // Manejo de envío
+    document.getElementById("form-pago").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("¡Gracias por tu compra!");
+      window.location.href = "Principal.html";
+    });
+  </script>
+
+</body>
+</html>

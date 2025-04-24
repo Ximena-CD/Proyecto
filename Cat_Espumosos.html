@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Vinos Tintos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Vista.css">
+    
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Catálogo de Vinos Espumosos</h1>
+        <a href="Principal.html" class="btn btn-light">Volver al Inicio</a>
+    </header>
+    
+    <main class="container mt-4">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="https://shre.ink/MyEQ" target="_blank">
+                        <img src="E1.png" class="card-img-top" alt="Espumoso 1">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Möet & Chandon Ice Imperial</h5>
+                        <p class="card-text">EPresenta un sabor amplio, carnoso y voluptuoso de macedonia fresca. Dulzura de caramelo 
+                            y membrillo. Acidez refrescante de la uva y notas de jengibre.</p>
+                        <button class="btn-ver-mas" onclick="toggleText(this)">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="https://shre.ink/MyE2" target="_blank">
+                        <img src="E2.png" class="card-img-top" alt="Espumoso 2">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Möet & Chandon Brut Imperial</h5>
+                        <p class="card-text">En boca detectamos sabores de fruta blanca (pera, melocotón, manzana). Finas burbujas. 
+                            Cítricos y matices de grosella.</p>
+                        <button class="btn-ver-mas" onclick="toggleText(this)">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="https://shre.ink/MyEc" target="_blank">
+                        <img src="E3.png" class="card-img-top" alt="Espumoso 3">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Freixenet Ice Rosé</h5>
+                        <p class="card-text">Desprende aromas de melocotón, pera madura, flores y un toque de frutas tropicales. En boca 
+                            se siente cremoso y dulce con un prolongado final. Es muy refrescante y delicioso.</p>
+                        <button class="btn-ver-mas" onclick="toggleText(this)">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+
+
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="https://shre.ink/MyEa" target="_blank">
+                        <img src="E4.png" class="card-img-top" alt="Espumoso 4">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Bottega White Gold</h5>
+                        <p class="card-text">Es un vino suave y balanceado, con la frescura que le aporta la uva Glera, el cuerpo de la 
+                            uva Chardonnay y la acidez de la uva Pinot.</p>
+                        <button class="btn-ver-mas" onclick="toggleText(this)">Ver más</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="https://shre.ink/MyEl" target="_blank">
+                        <img src="E5.png" class="card-img-top" alt="Espumoso 5">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Freixenet Prosecco</h5>
+                        <p class="card-text">Este vino blanco espumoso presenta un color amarillo pajizo con viva efervescencia y aromas 
+                            frescos a cítricos, manzanas y flores.En el paladar es limpio y fresco con tonos de limón maduro, manzana 
+                            verde y pomelo.</p>
+                        <button class="btn-ver-mas" onclick="toggleText(this)">Ver más</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    </main>
+    
+    <footer class="text-center py-3 mt-4 bg-dark text-white">
+        <p>&copy; 2025 Vinos Exquisitos. Derechos reservados.</p>
+    </footer>
+    
+    <script>
+        function toggleText(button) {
+            let text = button.previousElementSibling;
+            if (text.style.maxHeight === "60px") {
+                text.style.maxHeight = "none";
+                button.textContent = "Ver menos";
+            } else {
+                text.style.maxHeight = "60px";
+                button.textContent = "Ver más";
+            }
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

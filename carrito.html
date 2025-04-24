@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; }
+        h1 { text-align: center; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        .item { display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd; }
+        .item:last-child { border-bottom: none; }
+        .item p { margin: 0; }
+        .total { font-size: 1.2rem; font-weight: bold; text-align: right; margin-top: 20px; }
+        .btn { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px; }
+        .btn:hover { background-color: #45a049; }
+        #Regresar{ padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px;}
+        #Regresar:hover { background-color: #45a049; }
+        #boton{display: inline-block; width: 100%; text-align: center; margin-bottom: 15px;}
+        /* a{text-decoration: none; background-color: #4CAF50; color: white; border: none;} */
+        #Comprar{display: inline-block; margin-left: 70%;}
+    </style>
+</head>
+<body>
+    <h1>Tu Carrito de Compras</h1>
+    <div id="boton">
+        <button id="Regresar" onclick="window.location.href='Principal.html'">Regresar</button>
+    </div>
+    
+    <div class="container">
+        <div id="cart-items">
+            <p>Tu carrito está vacío.</p>
+        </div>
+        <p class="total">Total: $<span id="total-price">0.00</span></p><br>
+        <button class="btn" onclick="vaciarCarrito()">Vaciar Carrito</button>
+
+        <button class="btn" id="Comprar">Comprar</button>
+
+    </div>
+
+    <script>
+        const carrito = [
+            { nombre: "Gran Amado Blend", precio: 2000.00 },
+            { nombre: "Vino Rosado Casa Madero V", precio: 3500.00 },
+        ];
+
+        function mostrarCarrito() {
+            const cartItems = document.getElementById("cart-items");
+            const totalPrice = document.getElementById("total-price");
+            cartItems.innerHTML = "";
+            let total = 0;
+
+            if (carrito.length === 0) {
+                cartItems.innerHTML = "<p>Tu carrito está vacío.</p>";
+            } else {
+                carrito.forEach(item => {
+                    total += item.precio;
+                    cartItems.innerHTML += `
+                        <div class="item">
+                            <p>${item.nombre}</p>
+                            <p>$${item.precio.toFixed(2)}</p>
+                        </div>
+                    `;
+                });
+            }
+            totalPrice.textContent = total.toFixed(2);
+        }
+
+        function vaciarCarrito() {
+            carrito.length = 0;
+            mostrarCarrito();
+        }
+
+        document.addEventListener("DOMContentLoaded", mostrarCarrito);
+
+        document.getElementById("Comprar").addEventListener("click", function () {
+            window.location.href = "pago.html";
+        });
+
+    </script>
+</body>
+</html>

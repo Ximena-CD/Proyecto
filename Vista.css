@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16x;
+}
+
+#navbarNav{
+  text-align: center;
+}
+
+section {
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Verdana', sans-serif;
+}
+
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+  font-style: normal;
+}
+
+p {
+  text-align: justify;
+}
+
+.imagen-circular {
+  width: 150px; 
+  height: 150px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
+.card-img-top {
+  height: 375px;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card-img-top:hover {
+  transform: scale(1.2);
+}
+
+.card {
+  height: auto;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-text {
+  max-height: 60px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  /* Elimina text-overflow para no interferir con la altura */
+  text-overflow: unset;
+  white-space: normal;
+}
+
+.btn-ver-mas {
+  background-color: #800020;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.btn-ver-mas:hover {
+  background-color: #a83232;
+}
+
+#searchInput{
+  height: 35px;
+}
+
+#form{
+  align-items: center;
+}
+#btnform{
+  margin-top: 0px;
+  display: flex;           
+  align-items: center;     
+  justify-content: center; 
+  text-align: center;
+  height: 35px;
+}
+
+
+
+
+
+/* 
+-------------------------------------------- */
+
+
+/* Botón para abrir el modal */
+.btn {
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Contenedor del modal (oculto por defecto) */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;  /* Oculto por defecto */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Fondo borroso cuando el modal está activo */
+#modal:target {
+  display: flex;
+  backdrop-filter: blur(5px);
+}
+
+/* Contenido del modal */
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+/* Botón de cerrar */
+.close-btn {
+  display: block;
+  text-align: right;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botón del formulario */
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------- */
+
+.btn {
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Contenedor del modal */
+#registroModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;  /* Oculto por defecto */
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  z-index: 1000;  /* Asegura que esté al frente */
+}
+
+/* Mostrar modal cuando se active */
+#registroModal:target {
+  display: flex;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  z-index: 1001;
+}
+
+/* Botón de cerrar */
+.close-btn {
+  display: block;
+  text-align: right;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botón del formulario */
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#texto{
+  border: 2px solid;
+  border-color: white;
+  background-color: black;
+  border-radius: 15px;
+}
+
+.redireccionar{
+  
+    display: inline-block;
+    background-color: #333741;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+  
+.redireccionar:hover {
+    background-color: #1f2127; /* tono más oscuro al pasar el mouse */
+}
+  
